@@ -27,36 +27,15 @@ cc_prebuilt_library_shared {
 	},
 	target: {
 		android_arm: {
-			srcs: ["proprietary/lib/vendor.qti.hardware.fm@1.0.so"],
+			srcs: ["proprietary/product/lib/vendor.qti.hardware.fm@1.0.so"],
 		},
 		android_arm64: {
-			srcs: ["proprietary/lib64/vendor.qti.hardware.fm@1.0.so"],
+			srcs: ["proprietary/product/lib64/vendor.qti.hardware.fm@1.0.so"],
 		},
 	},
 	compile_multilib: "both",
 	prefer: true,
-}
-
-android_app_import {
-	name: "HotwordEnrollmentOKGoogleWCD9340",
-	owner: "xiaomi",
-	apk: "proprietary/priv-app/HotwordEnrollmentOKGoogleWCD9340/HotwordEnrollmentOKGoogleWCD9340.apk",
-	presigned: true,
-	dex_preopt: {
-		enabled: false,
-	},
-	privileged: true,
-}
-
-android_app_import {
-	name: "HotwordEnrollmentXGoogleWCD9340",
-	owner: "xiaomi",
-	apk: "proprietary/priv-app/HotwordEnrollmentXGoogleWCD9340/HotwordEnrollmentXGoogleWCD9340.apk",
-	presigned: true,
-	dex_preopt: {
-		enabled: false,
-	},
-	privileged: true,
+	product_specific: true,
 }
 
 cc_prebuilt_library_shared {
